@@ -1,0 +1,43 @@
+server:
+  port: 8099
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+   #使用druid数据库连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+#  main:
+#    banner-mode: off
+
+app:
+  key: 小测试
+  name: 小测试第二版-用户基础服务
+  desc: 小测试
+  version: 1.0
+  termsOfServiceUrl: http://www.zhanyun.cc
+  contact.name: 小测试
+  contact.url: http://www.zhanyun.cc
+  contact.email: server@zhanyun.cc
+  license: The Apache License, Version 2.0
+  licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
+
+
+logging:
+  pattern:
+    level: INFO
+  config: classpath:Logback.xml
