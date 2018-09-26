@@ -1,9 +1,10 @@
-package com.demospringboot.demo;
+package com.demospringboot;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.Banner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.cors.CorsConfiguration;
@@ -13,8 +14,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 @SpringBootApplication
 @EnableSwagger2
-@ComponentScan(basePackages = {"com.demospringboot.demo"})
-@MapperScan("com.demospringboot.demo.mapper")
+//@ComponentScan(basePackages = {"com.demospringboot"})
+//@MapperScan("com.demospringboot.demo.mapper")
 public class Application {
 
     //public static void main(String[] args) {

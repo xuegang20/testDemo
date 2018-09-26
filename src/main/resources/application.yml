@@ -1,5 +1,7 @@
 server:
   port: 8099
+#  servlet:
+#    context-path: /demo
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
@@ -21,9 +23,21 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
-#  main:
-#    banner-mode: off
+#mybatis:
+#  config-locations: classpath*:mapper/**Mapper.xml
+#  type-aliases-package: com.demospringboot.model
 
+security:
+  userOauth:
+    clientId: swagger-ui
+    clientSecret: Sa0rk3kgx
+    type: oauth2
+    authorizationUrl: http://dev.jyx365.top/sso/login
+    tokenUrl: http://dev.jyx365.top/oauth/access_token
+    tokenName: access_token
+    scope:
+        code: userinfo
+        desc: 用户信息
 app:
   key: 小测试
   name: 小测试第二版-用户基础服务
@@ -37,7 +51,8 @@ app:
   licenseUrl: http://www.apache.org/licenses/LICENSE-2.0.html
 
 
+
 logging:
   pattern:
     level: INFO
-  config: classpath:Logback.xml
+#  config: classpath:Logback.xml
